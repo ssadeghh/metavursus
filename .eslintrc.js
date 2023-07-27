@@ -1,10 +1,15 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended', // Use the Prettier plugin last to override conflicting rules
     'airbnb',
   ],
   parserOptions: {
@@ -14,9 +19,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'react-hooks', 'jsx-a11y', 'prettier'],
   rules: {
     'react/no-unescaped-entities': 0,
     'eslintreact/no-danger': 0,
